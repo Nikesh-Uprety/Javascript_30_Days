@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript day one</title>
+    <link rel="stylesheet" href="drum.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="area">
+            <div data-key="65" class="key"> <kbd>A</kbd>
+                <span class="sound">Deep</span>
+            </div>
+            <div data-key="83" class="key"> <kbd>
+                    S
+                </kbd> <span class="sound">Madal</span> </div>
+            <div data-key="68" class="key"> <kbd>
+                    D
+                </kbd> <span class="sound">Tururu</span> </div>
+            <div data-key="70" class="key"> <kbd>
+                    F
+                </kbd> <span class="sound">Tururu</span> </div>
+            <div data-key="71" class="key"> <kbd>
+                    G
+                </kbd> <span class="sound">Sharp</span> </div>
+            <div data-key="72" class="key"> <kbd>
+                    H
+                </kbd> <span class="sound">Tududu</span> </div>
+            <div data-key="74" class="key"> <kbd>J</kbd> <span class="sound">Dhucu</span> </div>
+            <div data-key="75" class="key"> <kbd>K</kbd> <span class="sound">Deep</span> </div>
+            <div data-key="76" class="key"> <kbd> L</kbd> <span class="sound">Tururu</span> </div>
+        </div>
+    </div>
+    <audio data-key="65" src="Music/sound1.wav"></audio>
+    <audio data-key="83" src="Music/sound2.wav"></audio>
+    <audio data-key="68" src="Music/sound3.wav"></audio>
+    <audio data-key="70" src="Music/sound4.wav"></audio>
+    <audio data-key="71" src="Music/sound5.wav"></audio>
+    <audio data-key="72" src="Music/sound6.wav"></audio>
+    <audio data-key="74" src="Music/sound7.wav"></audio>
+    <audio data-key="75" src="Music/sound1.wav"></audio>
+    <audio data-key="76" src="Music/sound4.wav"></audio>
+    <script>
+
+        function playsound(e){
+            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+            const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+            if(!audio) return; 
+            audio.currentTime = 0;
+            audio.play();
+            key.classList.add('playing'); 
+        }   
+
+    function removeTransition(e) {
+        if (e.propertyName !== 'transform') return; // skip it if it's not a transform
+        
+        this.classList.remove('playing');
+    }
+     
+    const keys =document.querySelectorAll('.key');
+    keys.forEach( key => key.addEventListener('transitionend', removeTransition) )
+    document.addEventListener('keydown', playsound);
+    </script>
+</body>
+
+</html>
