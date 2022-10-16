@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update CSS Variable with JS</title>
+</head>
+<body>
+    <h2>Update CSS Variable with JS</h2>
+    <div class="controls">
+        <label for="spacing">Spacing:</label>
+        <input type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
+
+        <label for="blur">Blur:</label>
+        <input type="range" name="blur" min="0" max="25" value="0" data-sizing="px">
+
+        <label for="br">Border-Radius:</label>
+        <input type="range" name="br" min="0" max="100" value="10" data-sizing="px">
+
+        <label for="base">Base Color:</label>
+        <input type="color" name="base" value="#ffc600">
+    </div>
+<img src="nikesh.jpg" style="height:400px; width: 600px;" alt="">
+
+<style>
+
+    :root{
+        --base:#ffc600;
+        --spacing:10px;
+        --blur:0px;
+        --br:2px;
+    }
+    img{
+        padding: var(--spacing);
+        background: var(--base);
+        filter: blur(var(--blur));
+        border-radius: var(--br);
+    }
+    h2,input,label{
+        font-family: 'Times New Roman', Times, serif;
+        color: white;
+    }
+
+    body{
+        text-align: center;
+        background:#193549;
+ 
+    }
+    input{
+        width: 100px;
+    }
+
+</style>
+<script>
+    const inputs =document.querySelectorAll('.controls input');
+
+    function handelUpdate(){
+        const suffix =this.dataset.sizing || '';
+        document.documentElement.style.setProperty(`--${this.name}`,this.value + suffix)
+        console.log(this.value);
+    }
+
+    inputs.forEach(input => input.addEventListener('change', handelUpdate));
+    inputs.forEach(input => input.addEventListener('mousemove', handelUpdate));
+</script>
+</body>
+</html>
