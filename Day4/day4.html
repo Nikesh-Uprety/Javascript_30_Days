@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day4 Javascript</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const names = [
+        { first: 'Nikesh', last: 'Uprety', year: '2003', passed: '2022' },
+        { first: 'Anish', last: 'Bhattarai', year: '2004', passed: '2000' },
+        { first: 'Aayush', last: 'Budhathoki', year: '2017', passed: '2001' },
+        { first: 'Tapash', last: 'Sharma', year: '2002', passed: '2001' },
+    ]
+    const people = ['Seamus ,Shaw', 'Nikhil,Stokes', 'Alyson , Hood', 'Jonathan , Camacho', 'Lola , Munoz', 'Makenzie , Burch',
+        'Eden, Graham', 'Sloane,Salazar', 'Henry,Wilkinson', 'Houston,Hogan', 'Alexandra,Davis', 'Lindsay,Daugherty'];
+
+        const twenty = names.filter(name => {
+            if(name.year >= 2000 && name.year <= 2004){
+                return true; // keep it
+            }
+        });
+        console.table(twenty)
+
+        const fn = names.map(name => name.first + ' ' + name.last);
+        console.log(fn);
+</script>
+
+</html>
