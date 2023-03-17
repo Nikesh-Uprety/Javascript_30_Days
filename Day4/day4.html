@@ -13,23 +13,86 @@
 </body>
 <script>
     const names = [
-        { first: 'Nikesh', last: 'Uprety', year: '2003', passed: '2022' },
-        { first: 'Anish', last: 'Bhattarai', year: '2004', passed: '2000' },
-        { first: 'Aayush', last: 'Budhathoki', year: '2017', passed: '2001' },
-        { first: 'Tapash', last: 'Sharma', year: '2002', passed: '2001' },
+        { first: 'Nikesh', last: 'Uprety', year: '2003', passed: '2040' },
+        { first: 'Anish', last: 'Bhattarai', year: '2004', passed: '2050' },
+        { first: 'Aayush', last: 'Budhathoki', year: '2017', passed: '2080' },
+        { first: 'Tapash', last: 'Sharma', year: '2002', passed: '2034' },
     ]
-    const people = ['Seamus ,Shaw', 'Nikhil,Stokes', 'Alyson , Hood', 'Jonathan , Camacho', 'Lola , Munoz', 'Makenzie , Burch',
-        'Eden, Graham', 'Sloane,Salazar', 'Henry,Wilkinson', 'Houston,Hogan', 'Alexandra,Davis', 'Lindsay,Daugherty'];
+    const people = ['Seamus, Shaw', 'Nikhil, Stokes', 'Alyson, Hood', 'Jonathan, Camacho', 'Lola, Munoz', 'Makenzie, Burch',
+        'Eden, Graham', 'Sloane, Salazar', 'Henry, Wilkinson', 'Houston, Hogan', 'Alexandra, Davis', 'Lindsay, Daugherty'];
 
-        const twenty = names.filter(name => {
-            if(name.year >= 2000 && name.year <= 2004){
-                return true; // keep it
-            }
-        });
-        console.table(twenty)
+// FILTER METHODE
 
-        const fn = names.map(name => name.first + ' ' + name.last);
-        console.log(fn);
+        // const twenty = names.filter((name) => {
+        //     if(name.year >= 2000 && name.year <= 2004){
+        //         return true; // keep it
+        //     }
+        // });
+        // console.table(twenty)
+
+// MAP METHODE
+
+        // const array=names.map((name)=>name.first +' '+ name.last)
+        // console.table(array)
+
+// SORT METHODE
+    // const ordered = names.sort((a,b)=>{
+
+    //     if (a.year > b.year) {
+    //         return 1;
+    //     } else{
+    //         return -1;
+    //     }
+    //     })
+
+    // const ordered = names.sort((a,b)=>a.year >b.year ? 1 : -1);
+    // console.table(ordered);
+
+// REDUCE METHODE
+
+    // const reduce=names.reduce((total,  name)=>{
+    //     return total + (name.passed - name.year)
+    // },0)
+    // console.log(reduce)
+
+// SORT METHODE
+
+        // const ordered = names.sort((a,b)=>a.passed-a.year > b.passed-b.year ? -1 : 1);
+        //     console.table(ordered);
+
+// The link for the test page is https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+// List all the streetNames starting with Litter 'de'
+
+        // const category = document.querySelector('.mw-category');
+        // const Links = [...category.querySelectorAll('a')];
+
+        // const Listname = Links
+        //                       .map((link)=> link.textContent)
+        //                       .filter((streetName)=> streetName.includes('de') )
+
+
+// SORT EXERCISE Sort the people alphabetically by last name
+
+    // const Sortpeople =people.sort((lastname, nextname)=>{
+    //     const [alast, afirst] = lastname.split(', ');
+    //     const [blast, bfirst] = lastname.split(', ');
+    //     return alast > bfirst ? 1 : -1;
+    // })
+    // console.log(Sortpeople);
+
+// REDUCE METHODE
+// Sum of the instances of each of these
+
+    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+    const vehicles =data.reduce((obj,item)=>{
+        if (!obj[item]) {
+            obj[item]=0;   
+        }
+        obj[item]++;
+        return obj;
+    },{})
+ console.log(vehicles);
+
+
 </script>
-
 </html>
