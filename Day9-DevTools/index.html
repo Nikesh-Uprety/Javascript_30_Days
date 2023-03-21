@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<style>
+</style>
+<body>
+
+  <p  onClick="makeGreen()">xBREAKxDOWNx</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    
+    // Regular
+    console.log('Hello');
+    // Interpolated
+    console.log('Hello I am %s string', '🅱️');
+
+    // Styled
+    console.log("%c I am some cool text","font-size:20px;background:red;");
+
+    // warning!
+    console.warn("OHH NO");
+    
+
+    // Error :|
+    console.error("Shit");
+
+
+    // Info
+    console.info('Crocodiles eat 3-4 people per year')
+
+    // Testing
+    const p = document.querySelector('p');
+    console.assert(p.classList.contains('ouch'), 'This is wrong')
+
+    // clearing
+
+    console.clear()
+
+    // Viewing DOM Elements
+    console.log(p)
+    console.dir(p)
+
+    // Grouping together
+
+    dogs.forEach(dog => {
+        console.groupCollapsed(`${dog.name}`);
+        console.log(`This is ${dog.name}`);
+        console.log(`${dog.name} is ${dog.age} years old`);
+        console.groupEnd(`${dog.name}`)
+    });
+
+    // counting
+    console.count('Nike')
+    console.count('Niku')
+    console.count('Niku')
+    console.count('Nike')
+    console.count('Nike')
+    console.count('Niku')
+    console.count('Niku')
+    
+    console.count('Nike')
+    console.count('Nike')
+    
+
+    // timing
+
+    console.time('fetching data')
+    fetch('https://api.github.com/users/Nikesh-Uprety')
+    .then(data => data.json())
+    .then(data => { 
+        console.timeEnd('fetching data')
+        console.log(data);
+        console.log('%c His blog site name is',`font-size:20px; height:20px,width:20px; background-image:"${data.avatar_url}";`)
+    })
+
+  </script>
+</body>
+</html>
