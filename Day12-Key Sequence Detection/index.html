@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<body>
+    <h1>KONAMI CODE</h1>
+    <h1>I want the unicorn</h1>
+<script>
+
+    const array =[];
+    const secret = 'niku';
+
+    window.addEventListener('keyup',(e)=>{
+        console.log(e.key);
+        array.push(e.key)
+        array.splice(-secret.length -1, array.length - secret.length);
+
+        if(array.join('').includes(secret)){
+            console.log(('NIKU PUBG MOBILE'));
+            cornify_add();
+        }
+        console.log(array)
+    });
+
+
+</script>
+</body>
+</html>
