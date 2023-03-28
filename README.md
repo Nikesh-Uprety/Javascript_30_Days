@@ -4,4 +4,4 @@
 ## This repo is live on githubPages and live demo of each day project can be opened by the link
 # https://nikesh-uprety.github.io/Javascript_30_Days/ `The Directory Name` 
 ## For example
-# https://nikesh-uprety.github.io/Javascript_30_Days/`Day1`
+# https://nikesh-uprety.github.io/Javascript_30_Days/ `Day1`
