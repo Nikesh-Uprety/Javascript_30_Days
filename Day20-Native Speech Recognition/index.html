@@ -37,14 +37,12 @@
       if(transcript.includes('get the weather')) {
         console.log('Here it the current weather...');
       }
-
       console.log(transcript);
-
     });
 
-    recognition.addEventListener('end', recognition.start);
+recognition.addEventListener('end', recognition.start);
 
-  recognition.start();
+recognition.start();
 
 
 </script>
